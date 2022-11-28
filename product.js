@@ -41,11 +41,13 @@ function F_add(event){
     }
     if (v == true) {
     var produit = JSON.parse(localStorage.getItem('produit')) || [] ;
+    var id = Math.random().toString(36).substring(2) ;
     var prod ={
         Name : Name.value,
         Description : Description.value,
         Price : Price.value,
-        Quantity : Quantity.value
+        Quantity : Quantity.value,
+        ID : id
     }
     produit.push(prod);
     localStorage.setItem('produit',JSON.stringify(produit));
